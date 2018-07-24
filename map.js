@@ -28,11 +28,11 @@ function styleSecuestros(feature) {
     }
 }
 //
-// function geojsonPopup(feature, layer){
-//     if(feature.properties.SOVEREIGNT){
-//         layer.bindPopup('Country:   ' + feature.properties.SOVEREIGNT + '<br>Total Homicides:   '+ feature.properties.refactor_3 + '<br>Homicide Rate:   '+ feature.properties.refactor_4 + ' per 100,000')
-//     }
-// }
+function geojsonPopup(feature, layer){
+     if(feature.properties.NOMGEO != null){
+        layer.bindPopup('Estado:   ' + feature.properties.NOMGEO + '<br>Secuestros en 2015:   '+ feature.properties._Total);
+    }
+}
 // function label(feature, layer){
 //     if(feature.properties.refactor_4 != null){
 //         layer.bindTooltip(feature.properties.refactor_4 + ' per 100,000',{direction: 'center'},{permanent: true},{opacity: .1});
@@ -41,7 +41,7 @@ function styleSecuestros(feature) {
 // }
 L.geoJSON([secuestros2015], {
     style: styleSecuestros,
-    // onEachFeature: label,
+     onEachFeature: geojsonPopup,
     pointToLayer: function (feature, latlng){
         return L.marker(latlng);
     }
