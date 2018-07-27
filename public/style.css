@@ -1,0 +1,23 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#mapid {
+    height: 100%;
+}
+
+.buscador{
+    z-index: 222;
+
+}
+
+.marco{
+    background: white;
+    padding: 5px;
+    border: 1px solid black;
+}
