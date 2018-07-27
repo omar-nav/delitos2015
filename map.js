@@ -8,14 +8,13 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(mymap);
 
 function choroplethize(d) {
-    return d > 162 ? '#034e7b' :
-        d > 80 ? '#0570b0' :
-            d > 54 ? '#3690c0' :
-                d > 24 ? '#74a9cf' :
-                 d > 11 ? '#a6bddb' :
-                       d > 5 ? '#d0d1e6' :
-                        <!-- if values are null keep transparent-->
-                        '#f1eef6';
+    return d > 162 ? '#990000' :
+        d > 80 ? '#d7301f' :
+            d > 54 ? '#ef6548' :
+                d > 24 ? '#fc8d59' :
+                 d > 11 ? '#fdbb84' :
+                     d > 5 ? '#fdd49e' :
+                        '#fef0d9';
 }
 function styleSecuestros(feature) {
     return {
@@ -27,6 +26,7 @@ function styleSecuestros(feature) {
         fillColor: choroplethize(feature.properties._Total)
     }
 }
+
 //
 
 // function label(feature, layer){
